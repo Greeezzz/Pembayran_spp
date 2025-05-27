@@ -25,26 +25,13 @@ if ($_SESSION['level'] != 'admin') {
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <style>
         body {
-            background: linear-gradient(135deg, #fff 0%, #ffdde1 60%, #ff6161 100%);
+            background: linear-gradient(135deg, #fff 0%, #d0eaff 60%, #007bff 100%);
             min-height: 100vh;
             font-family: 'Segoe UI', 'Arial', sans-serif;
         }
 
         .navbar {
-            background: linear-gradient(90deg, #ff6161 0%, #ffb3b3 100%);
-            animation: fadeInDown 0.8s;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            background: linear-gradient(90deg, #007bff 0%, #71c9f8 100%);
         }
 
         .nav-link {
@@ -60,7 +47,7 @@ if ($_SESSION['level'] != 'admin') {
             bottom: 4px;
             width: 100%;
             height: 2px;
-            background: #fff0f0;
+            background: #b3e0ff;
             transform: scaleX(0);
             transform-origin: right;
             transition: transform 0.3s ease;
@@ -72,59 +59,17 @@ if ($_SESSION['level'] != 'admin') {
         }
 
         header.bg-info {
-            background: linear-gradient(90deg, #ff6161 0%, #ffb3b3 100%) !important;
-            animation: fadeInUp 1s;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            background: linear-gradient(90deg, #007bff 0%, #71c9f8 100%) !important;
         }
 
         .card {
-            border: 2.5px solid #ff6161;
+            border: 2.5px solid #007bff;
             border-radius: 16px;
-            box-shadow: 0 8px 32px 0 #ff616133;
-            animation: popIn 0.8s cubic-bezier(.68, -0.55, .27, 1.55);
-        }
-
-        @keyframes popIn {
-            0% {
-                transform: scale(0.95) translateY(40px);
-                opacity: 0;
-            }
-
-            100% {
-                transform: scale(1) translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .card-body {
-            animation: slideFadeIn 0.8s ease;
-        }
-
-        @keyframes slideFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            box-shadow: 0 8px 32px 0 #007bff33;
         }
 
         .footer {
-            background: #fff0f0;
+            background: #e6f2ff;
         }
     </style>
 </head>
@@ -143,7 +88,7 @@ if ($_SESSION['level'] != 'admin') {
                     <a href="admin.php?url=petugas" class="nav-link px-3 menu-link"><i class="bi bi-person-badge me-1"></i> Petugas</a>
                     <a href="admin.php?url=pembayaran" class="nav-link px-3 menu-link"><i class="bi bi-wallet2 me-1"></i> Pembayaran</a>
                     <a href="admin.php?url=laporan" class="nav-link px-3 menu-link"><i class="bi bi-file-earmark-bar-graph me-1"></i> Laporan</a>
-                    <a href="admin.php?url=logout" class="nav-link px-3 menu-link text-warning fw-bold"><i class="bi bi-box-arrow-right me-1"></i> Log Out</a>
+                    <a href="admin.php?url=logout" class="nav-link px-3 menu-link fw-bold"><i class="bi bi-box-arrow-right me-1"></i> Log Out</a>
                 </div>
             </div>
         </div>

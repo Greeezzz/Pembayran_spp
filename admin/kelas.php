@@ -9,9 +9,7 @@ if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
 }
 
-// Ambil data SPP
-// Jika memang tabel db_spp_spp memiliki kolom nama dan klsjurusan, tambahkan ke SELECT
-$sql = "SELECT id_spp, nama, klsjurusan, tahun, nominal FROM db_spp_spp";
+$sql = "SELECT id_kelas, nama_kelas, kompetensi_keahlian FROM db_spp_kelas";
 $result = $conn->query($sql);
 ?>
 
@@ -20,7 +18,7 @@ $result = $conn->query($sql);
 
 <head>
     <meta charset="UTF-8">
-    <title>Data SPP</title>
+    <title>Data Kelas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -125,19 +123,17 @@ $result = $conn->query($sql);
 <body>
     <div class="container py-5">
         <div class="card p-4">
-            <h2 class="mb-4 text-center">Data SPP</h2>
+            <h2 class="mb-4 text-center">Data Kelas</h2>
             <div class="mb-3 text-end">
-                <a href="?url=tambah-spp" class="btn btn-merah">+ Tambah SPP</a>
+                <a href="?url=tambah-kelas" class="btn btn-merah">+ Tambah Kelas</a>
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered table-striped align-middle">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama</th>
-                            <th>Kelas/Jurusan</th>
-                            <th>Tahun</th>
-                            <th>Nominal</th>
+                            <th>Nama Kelas</th>
+                            <th>Komptensi Keahlian</th>
                             <th>Edit</th>
                             <th>Hapus</th>
                         </tr>
@@ -149,12 +145,10 @@ $result = $conn->query($sql);
                             while ($row = $result->fetch_assoc()) {
                                 echo "<tr>
                                 <td>{$no}</td>
-                                <td>{$row['nama']}</td>
-                                <td>{$row['klsjurusan']}</td>
-                                <td>{$row['tahun']}</td>
-                                <td>Rp " . number_format($row['nominal'], 0, ',', '.') . "</td>
-                                <td><a href='?url=edit-spp&id_spp={$row['id_spp']}' class='btn btn-merah btn-sm'>Edit</a></td>
-                                <td><a href='?url=hapus-spp&id_spp={$row['id_spp']}' class='btn btn-danger btn-sm' onclick=\"return confirm('Yakin ingin menghapus?')\">Hapus</a></td>
+                                <td>{$row['nama_kelas']}</td>
+                                <td>{$row['kompetensi_keahlian']}</td>
+                                <td><a href='?url=edit-kelas&id_kelas={$row['id_kelas']}' class='btn btn-merah btn-sm'>Edit</a></td>
+                                <td><a href='?url=hapus-kelas&id_kelas={$row['id_kelas']}' class='btn btn-danger btn-sm' onclick=\"return confirm('Yakin ingin menghapus?')\">Hapus</a></td>
                             </tr>";
                                 $no++;
                             }

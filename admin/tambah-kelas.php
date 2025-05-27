@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Tambah SPP</title>
+    <title>Tambah Kelas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -101,26 +101,18 @@
     <div class="container py-5">
         <div class="card shadow-lg">
             <div class="card-header text-center">
-                <h4 class="mb-0">Form Tambah SPP</h4>
+                <h4 class="mb-0">Form Tambah Kelas</h4>
             </div>
             <div class="card-body">
-                <a href="?url=spp" class="btn btn-outline-merah mb-3">← Kembali</a>
-                <form action="?url=proses-tambah-spp" method="post">
+                <a href="?url=kelas" class="btn btn-outline-merah mb-3">← Kembali</a>
+                <form action="?url=proses-tambah-kelas" method="post">
                     <div class="form-group mb-3">
-                        <label for="nama" class="form-label">Nama SPP</label>
-                        <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukkan nama SPP" required maxlength="50">
+                        <label for="nama_kelas" class="form-label">Nama Kelas</label>
+                        <input type="text" name="nama_kelas" class="form-control" id="nama_kelas" placeholder="Masukkan nama Kelas" required maxlength="50">
                     </div>
                     <div class="form-group mb-3">
-                        <label for="klsjurusan" class="form-label">Kelas/Jurusan</label>
-                        <input type="text" name="klsjurusan" class="form-control" id="klsjurusan" placeholder="Masukkan kelas/jurusan SPP" required maxlength="50">
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="tahun" class="form-label">Tahun</label>
-                        <input type="number" name="tahun" class="form-control" id="tahun" placeholder="Masukkan tahun SPP" required maxlength="4">
-                    </div>
-                    <div class="form-group mb-4">
-                        <label for="nominal" class="form-label">Nominal</label>
-                        <input type="number" name="nominal" class="form-control" id="nominal" placeholder="Masukkan nominal SPP" required maxlength="15">
+                        <label for="kompetensi_keahlian" class="form-label">Kompetensi Keahlian</label>
+                        <input type="text" name="kompetensi_keahlian" class="form-control" id="kompetensi_keahlian" placeholder="Masukkan kompetensi keahlian" required maxlength="50">
                     </div>
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="btn btn-merah">💾 Simpan</button>

@@ -1,13 +1,13 @@
 <?php
 include '../koneksi.php';
 
-if (!isset($_GET['id_spp'])) {
+if (!isset($_GET['id_kelas'])) {
     echo "<script>alert('ID SPP tidak ditemukan!'); window.location.href='?url=spp';</script>";
     exit;
 }
 
-$id_spp = $_GET['id_spp'];
-$sql = "SELECT * FROM db_spp_spp WHERE id_spp = '$id_spp'";
+$id_kelas = $_GET['id_kelas'];
+$sql = "SELECT * FROM db_spp_kelas WHERE id_kelas = '$id_kelas'";
 $query = mysqli_query($koneksi, $sql);
 $data = mysqli_fetch_array($query);
 ?>
@@ -17,7 +17,7 @@ $data = mysqli_fetch_array($query);
 
 <head>
     <meta charset="UTF-8">
-    <title>Edit SPP</title>
+    <title>Edit Kelas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -114,31 +114,23 @@ $data = mysqli_fetch_array($query);
     <div class="container py-5">
         <div class="card shadow-lg">
             <div class="card-header text-center">
-                <h4 class="mb-0">Form Edit SPP</h4>
+                <h4 class="mb-0">Form Edit Kelas</h4>
             </div>
             <div class="card-body">
-                <a href="?url=spp" class="btn btn-outline-merah mb-3">← Kembali</a>
-                <form action="?url=proses-edit-spp" method="post">
-                    <input type="hidden" name="id_spp" value="<?= $data['id_spp'] ?>">
+                <a href="?url=kelas" class="btn btn-outline-merah mb-3">← Kembali</a>
+                <form action="?url=proses-edit-kelas" method="post">
+                    <input type="hidden" name="id_kelas" value="<?= $data['id_kelas'] ?>">
                     <div class="form-group mb-3">
-                        <label for="nama" class="form-label">Nama SPP</label>
-                        <input type="text" name="nama" class="form-control" id="nama" value="<?= htmlspecialchars($data['nama']) ?>" required maxlength="50">
+                        <label for="nama_kelas" class="form-label">Nama Kelas</label>
+                        <input type="text" name="nama_kelas" class="form-control" id="nama_kelas" value="<?= htmlspecialchars($data['nama_kelas']) ?>" required maxlength="50">
                     </div>
                     <div class="form-group mb-3">
-                        <label for="klsjurusan" class="form-label">Kelas/Jurusan</label>
-                        <input type="text" name="klsjurusan" class="form-control" id="klsjurusan" value="<?= htmlspecialchars($data['klsjurusan']) ?>" required maxlength="50">
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="tahun" class="form-label">Tahun</label>
-                        <input type="number" name="tahun" class="form-control" id="tahun" value="<?= htmlspecialchars($data['tahun']) ?>" required maxlength="4">
-                    </div>
-                    <div class="form-group mb-4">
-                        <label for="nominal" class="form-label">Nominal</label>
-                        <input type="number" name="nominal" class="form-control" id="nominal" value="<?= htmlspecialchars($data['nominal']) ?>" required maxlength="15">
+                        <label for="kompetensi_keahlian" class="form-label">Kompetensi Keahlian</label>
+                        <input type="text" name="kompetensi_keahlian" class="form-control" id="kompetensi_keahlian" value="<?= htmlspecialchars($data['kompetensi_keahlian']) ?>" required maxlength="50">
                     </div>
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="btn btn-merah">💾 Update</button>
-                        <a href="?url=spp" class="btn btn-outline-merah">🔄 Batal</a>
+                        <a href="?url=kelas" class="btn btn-outline-merah">🔄 Batal</a>
                     </div>
                 </form>
             </div>
